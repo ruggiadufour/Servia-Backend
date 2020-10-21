@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Resenas_Solicitudes",
+  "info": {
+    "name": "Resenas_Solicitudes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Resena_id": {
+      "model": "resenas"
+    },
+    "Solicitud_id": {
+      "model": "solicitud"
+    }
+  }
+}

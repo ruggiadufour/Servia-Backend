@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "solicitudes",
+  "info": {
+    "name": "Solicitudes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "titulo": {
+      "type": "string"
+    },
+    "precio_estimado": {
+      "type": "float"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "tipo": {
+      "type": "boolean"
+    },
+    "estado": {
+      "type": "boolean"
+    },
+    "Usuario_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "Servicio_id": {
+      "model": "servicios"
+    }
+  }
+}

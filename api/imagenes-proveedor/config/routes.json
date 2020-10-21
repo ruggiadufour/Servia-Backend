@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/imagenes-proveedors",
+      "handler": "imagenes-proveedor.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/imagenes-proveedors/count",
+      "handler": "imagenes-proveedor.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/imagenes-proveedors/:id",
+      "handler": "imagenes-proveedor.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/imagenes-proveedors",
+      "handler": "imagenes-proveedor.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/imagenes-proveedors/:id",
+      "handler": "imagenes-proveedor.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/imagenes-proveedors/:id",
+      "handler": "imagenes-proveedor.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

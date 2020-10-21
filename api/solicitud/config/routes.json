@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/solicituds",
+      "handler": "solicitud.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/solicituds/count",
+      "handler": "solicitud.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/solicituds/:id",
+      "handler": "solicitud.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/solicituds",
+      "handler": "solicitud.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/solicituds/:id",
+      "handler": "solicitud.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/solicituds/:id",
+      "handler": "solicitud.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

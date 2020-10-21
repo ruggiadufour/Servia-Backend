@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Imagenes_Solicitud",
+  "info": {
+    "name": "Imagenes_Solicitud",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "Solicitud_id": {
+      "model": "solicitud"
+    }
+  }
+}

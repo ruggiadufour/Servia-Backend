@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Notificaciones",
+  "info": {
+    "name": "Notificaciones",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "emisor": {
+      "type": "biginteger"
+    },
+    "nombre_publicacion_proveedor": {
+      "type": "string",
+      "maxLength": 65
+    },
+    "tipo": {
+      "type": "integer"
+    },
+    "leido": {
+      "type": "boolean"
+    },
+    "Usuario_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

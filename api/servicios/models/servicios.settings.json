@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "servicios",
+  "info": {
+    "name": "Servicios",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "Categoria_id": {
+      "model": "categorias"
+    }
+  }
+}

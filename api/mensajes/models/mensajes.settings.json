@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Mensajes",
+  "info": {
+    "name": "Mensajes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "contenido": {
+      "type": "text"
+    },
+    "enviado_por": {
+      "type": "boolean"
+    },
+    "Chat_id": {
+      "model": "chats"
+    }
+  }
+}

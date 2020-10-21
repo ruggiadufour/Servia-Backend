@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Imagenes_Proveedor",
+  "info": {
+    "name": "Imagenes_Proveedor"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "Proveedor_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

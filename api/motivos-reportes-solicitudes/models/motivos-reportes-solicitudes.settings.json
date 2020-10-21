@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Motivos_Reportes_Solicitudes",
+  "info": {
+    "name": "Motivos_Reportes_Solicitudes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Reporte_Solicitud_id": {
+      "model": "solicitud"
+    },
+    "Motivo_id": {
+      "model": "motivos"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/resenas-solicituds",
+      "handler": "resenas-solicitud.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/resenas-solicituds/count",
+      "handler": "resenas-solicitud.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/resenas-solicituds/:id",
+      "handler": "resenas-solicitud.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/resenas-solicituds",
+      "handler": "resenas-solicitud.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/resenas-solicituds/:id",
+      "handler": "resenas-solicitud.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/resenas-solicituds/:id",
+      "handler": "resenas-solicitud.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

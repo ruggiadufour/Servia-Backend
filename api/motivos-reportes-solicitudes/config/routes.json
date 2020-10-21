@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/motivos-reportes-solicitudes",
+      "handler": "motivos-reportes-solicitudes.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/motivos-reportes-solicitudes/count",
+      "handler": "motivos-reportes-solicitudes.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/motivos-reportes-solicitudes/:id",
+      "handler": "motivos-reportes-solicitudes.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/motivos-reportes-solicitudes",
+      "handler": "motivos-reportes-solicitudes.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/motivos-reportes-solicitudes/:id",
+      "handler": "motivos-reportes-solicitudes.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/motivos-reportes-solicitudes/:id",
+      "handler": "motivos-reportes-solicitudes.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
