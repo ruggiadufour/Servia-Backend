@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/motivos",
+      "handler": "motivos.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/motivos/count",
+      "handler": "motivos.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/motivos/:id",
+      "handler": "motivos.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/motivos",
+      "handler": "motivos.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/motivos/:id",
+      "handler": "motivos.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/motivos/:id",
+      "handler": "motivos.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

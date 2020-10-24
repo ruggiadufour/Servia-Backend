@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/lista-servicios",
+      "handler": "lista-servicios.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/lista-servicios/count",
+      "handler": "lista-servicios.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/lista-servicios/:id",
+      "handler": "lista-servicios.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/lista-servicios",
+      "handler": "lista-servicios.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/lista-servicios/:id",
+      "handler": "lista-servicios.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/lista-servicios/:id",
+      "handler": "lista-servicios.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

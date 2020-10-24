@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Reportes",
+  "info": {
+    "name": "Reportes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "descripcion": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "boolean"
+    },
+    "accion": {
+      "type": "boolean"
+    },
+    "users_Administrador_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "users_Usuario_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "Chat_id": {
+      "model": "chats"
+    },
+    "Solicitud_id": {
+      "model": "solicitud"
+    }
+  }
+}

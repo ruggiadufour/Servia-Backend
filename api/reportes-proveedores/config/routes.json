@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/reportes-proveedores",
+      "handler": "reportes-proveedores.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/reportes-proveedores/count",
+      "handler": "reportes-proveedores.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/reportes-proveedores/:id",
+      "handler": "reportes-proveedores.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/reportes-proveedores",
+      "handler": "reportes-proveedores.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/reportes-proveedores/:id",
+      "handler": "reportes-proveedores.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/reportes-proveedores/:id",
+      "handler": "reportes-proveedores.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

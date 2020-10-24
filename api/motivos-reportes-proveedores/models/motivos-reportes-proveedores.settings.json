@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Motivos_Reportes",
+  "info": {
+    "name": "Motivos_Reportes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Motivo_id": {
+      "model": "motivos"
+    },
+    "Reporte_id": {
+      "model": "reportes-proveedores"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/notificaciones",
+      "handler": "notificaciones.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/notificaciones/count",
+      "handler": "notificaciones.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/notificaciones/:id",
+      "handler": "notificaciones.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/notificaciones",
+      "handler": "notificaciones.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/notificaciones/:id",
+      "handler": "notificaciones.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/notificaciones/:id",
+      "handler": "notificaciones.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

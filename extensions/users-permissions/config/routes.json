@@ -1,0 +1,19 @@
+{
+    "routes": [{
+        "method": "PUT",
+        "path": "/api/users/:id",
+        "handler": "User.update",
+        "config": {
+          "policies": [],
+          "prefix":"",
+          "description": "Se actualiza un usuario existente.",
+          "tag":{
+              "plugin": "users-permissions",
+              "name": "User",
+              "actionType": "update"
+          }
+        }
+      }
+    ]
+}
+  

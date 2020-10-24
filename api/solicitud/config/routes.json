@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/api/solicitud",
+      "handler": "solicitud.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/solicitud/count",
+      "handler": "solicitud.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/solicitud/:id",
+      "handler": "solicitud.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/solicitud",
+      "handler": "solicitud.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/api/solicitud/:id",
+      "handler": "solicitud.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/solicitud/:id",
+      "handler": "solicitud.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
