@@ -13,6 +13,10 @@
   "attributes": {
     "nombre": {
       "type": "string"
+    },
+    "servicios": {
+      "via": "categoria",
+      "collection": "servicios"
     }
   }
 }

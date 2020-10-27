@@ -68,23 +68,19 @@
     "telefono": {
       "type": "string"
     },
-    "imagen_perfil": {
-      "type": "string"
-    },
     "permiso": {
       "type": "integer"
     },
     "estado": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "dni": {
       "type": "string"
     },
-    "fecha_creacion": {
-      "type": "date"
-    },
     "mostrar_telefono": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "descripcion": {
       "type": "text"
@@ -96,16 +92,27 @@
       "type": "boolean",
       "default": false
     },
-    "avatar": {
-      "model": "file",
+    "img_perfil": {
+      "type": "biginteger"
+    },
+    "img_dni1": {
+      "type": "biginteger"
+    },
+    "img_dni2": {
+      "type": "biginteger"
+    },
+    "imagenes_dni": {
+      "collection": "file",
       "via": "related",
       "allowedTypes": [
-        "images"
+        "images",
+        "files",
+        "videos"
       ],
       "plugin": "upload",
       "required": false
     },
-    "img_dni": {
+    "imagenes_proveedor": {
       "collection": "file",
       "via": "related",
       "allowedTypes": [
@@ -113,6 +120,11 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "servicios": {
+      "collection": "servicios",
+      "via": "users",
+      "dominant": true
     }
   }
 }

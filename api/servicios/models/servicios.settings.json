@@ -14,8 +14,14 @@
     "nombre": {
       "type": "string"
     },
-    "Categoria_id": {
-      "model": "categorias"
+    "users": {
+      "via": "servicios",
+      "plugin": "users-permissions",
+      "collection": "user"
+    },
+    "categoria": {
+      "model": "categorias",
+      "via": "servicios"
     }
   }
 }

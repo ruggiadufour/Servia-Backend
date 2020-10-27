@@ -26,12 +26,21 @@
     "estado": {
       "type": "boolean"
     },
-    "users_Usuario_id": {
+    "Usuario_id": {
       "plugin": "users-permissions",
       "model": "user"
     },
     "Servicio_id": {
       "model": "servicios"
+    },
+    "imagenes": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
