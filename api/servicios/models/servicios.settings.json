@@ -14,7 +14,7 @@
     "nombre": {
       "type": "string"
     },
-    "users": {
+    "usuarios": {
       "via": "servicios",
       "plugin": "users-permissions",
       "collection": "user"
@@ -22,6 +22,10 @@
     "categoria": {
       "model": "categorias",
       "via": "servicios"
+    },
+    "solicitudes": {
+      "via": "Servicio_id",
+      "collection": "solicitud"
     }
   }
 }

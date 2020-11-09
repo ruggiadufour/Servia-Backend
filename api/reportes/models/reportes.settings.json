@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "Notificaciones",
+  "collectionName": "reportes",
   "info": {
-    "name": "Notificaciones",
+    "name": "Reportes",
     "description": ""
   },
   "options": {
@@ -11,26 +11,32 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "datos_notificacion": {
+    "descripcion": {
       "type": "text"
     },
-    "tipo": {
-      "type": "integer"
+    "estado": {
+      "type": "integer",
+      "default": 0
     },
-    "leido": {
+    "accion": {
       "type": "boolean"
     },
-    "emisor": {
+    "Administrador_id": {
       "plugin": "users-permissions",
       "model": "user"
     },
-    "solicitud": {
+    "Usuario_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "Solicitud_id": {
       "model": "solicitud"
     },
-    "receptor": {
-      "via": "notificaciones",
-      "plugin": "users-permissions",
-      "model": "user"
+    "motivos": {
+      "collection": "motivos"
+    },
+    "notificacion": {
+      "collection": "notificaciones"
     }
   }
 }

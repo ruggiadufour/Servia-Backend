@@ -17,6 +17,15 @@
     "servicios": {
       "via": "categoria",
       "collection": "servicios"
+    },
+    "imagen": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

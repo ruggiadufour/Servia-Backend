@@ -23,15 +23,14 @@
     "tipo": {
       "type": "boolean"
     },
-    "estado": {
-      "type": "boolean"
+    "pausado": {
+      "type": "boolean",
+      "default": false
     },
     "Usuario_id": {
+      "via": "solicitudes",
       "plugin": "users-permissions",
       "model": "user"
-    },
-    "Servicio_id": {
-      "model": "servicios"
     },
     "imagenes": {
       "collection": "file",
@@ -41,6 +40,17 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "Categoria_id": {
+      "model": "categorias"
+    },
+    "Servicio_id": {
+      "model": "servicios",
+      "via": "solicitudes"
+    },
+    "bloqueado": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

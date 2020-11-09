@@ -123,8 +123,33 @@
     },
     "servicios": {
       "collection": "servicios",
-      "via": "users",
+      "via": "usuarios",
       "dominant": true
+    },
+    "solicitudes": {
+      "collection": "solicitud",
+      "via": "Usuario_id"
+    },
+    "bloqueado": {
+      "type": "boolean",
+      "default": false
+    },
+    "espera_verificacion": {
+      "type": "boolean",
+      "default": false
+    },
+    "notificaciones": {
+      "collection": "notificaciones",
+      "via": "receptor"
+    },
+    "imagen_perfil": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

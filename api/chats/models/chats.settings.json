@@ -17,16 +17,27 @@
     "noleido_receptor": {
       "type": "integer"
     },
-    "users_Emisor_id": {
+    "emisor": {
       "plugin": "users-permissions",
       "model": "user"
     },
-    "users_Receptor_id": {
+    "receptor": {
       "plugin": "users-permissions",
       "model": "user"
     },
-    "Solicitud_id": {
+    "solicitud": {
       "model": "solicitud"
+    },
+    "mensajes": {
+      "collection": "mensajes",
+      "via": "chat"
+    },
+    "categoria": {
+      "model": "categorias"
+    },
+    "peticion": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

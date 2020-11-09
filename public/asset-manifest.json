@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.89838564.chunk.css",
+    "main.js": "/static/js/main.a0579a2d.chunk.js",
+    "main.js.map": "/static/js/main.a0579a2d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f16ea130.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f16ea130.js.map",
+    "static/css/2.be5d8eb4.chunk.css": "/static/css/2.be5d8eb4.chunk.css",
+    "static/js/2.194594bb.chunk.js": "/static/js/2.194594bb.chunk.js",
+    "static/js/2.194594bb.chunk.js.map": "/static/js/2.194594bb.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d598294172c615a308f81da625684395.js": "/precache-manifest.d598294172c615a308f81da625684395.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.be5d8eb4.chunk.css.map": "/static/css/2.be5d8eb4.chunk.css.map",
+    "static/css/main.89838564.chunk.css.map": "/static/css/main.89838564.chunk.css.map",
+    "static/js/2.194594bb.chunk.js.LICENSE.txt": "/static/js/2.194594bb.chunk.js.LICENSE.txt",
+    "static/media/Miniatura.png": "/static/media/Miniatura.f4e4e06b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f16ea130.js",
+    "static/css/2.be5d8eb4.chunk.css",
+    "static/js/2.194594bb.chunk.js",
+    "static/css/main.89838564.chunk.css",
+    "static/js/main.a0579a2d.chunk.js"
+  ]
+}

@@ -26,9 +26,12 @@
     "votos_negativos": {
       "type": "integer"
     },
-    "users_Usuario_id": {
+    "proveedor": {
       "plugin": "users-permissions",
       "model": "user"
+    },
+    "servicios": {
+      "collection": "servicios"
     }
   }
 }
