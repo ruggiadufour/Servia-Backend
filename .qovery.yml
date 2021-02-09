@@ -1,0 +1,15 @@
+---
+application:
+  name: "servia-backend"
+  project: "servia-backend"
+  organization: "QoveryCommunity"
+databases:
+- type: "MYSQL"
+  name: "servia-db"
+  version: "5.5"
+routers:
+- name: "main-servia-backend"
+  routes:
+  - application_name: "servia-backend"
+    paths:
+    - "/*"
