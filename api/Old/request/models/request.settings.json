@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "request",
+  "info": {
+    "name": "request",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "float"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "boolean"
+    },
+    "paused": {
+      "type": "boolean",
+      "default": false
+    },
+    "user_id": {
+      "via": "solicitudes",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "category_id": {
+      "model": "categories"
+    },
+    "service_id": {
+      "model": "services",
+      "via": "request"
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

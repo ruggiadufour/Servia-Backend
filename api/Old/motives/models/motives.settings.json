@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "motives",
+  "info": {
+    "name": "motives"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 40
+    },
+    "type": {
+      "type": "boolean"
+    }
+  }
+}

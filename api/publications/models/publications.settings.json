@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "publications",
+  "info": {
+    "name": "publications",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "text"
+    },
+    "type": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "paused": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "private": false,
+      "required": true
+    },
+    "public_user": {
+      "via": "publications",
+      "model": "public-user"
+    },
+    "service": {
+      "model": "services"
+    },
+    "categories": {
+      "model": "categories"
+    }
+  }
+}
