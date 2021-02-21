@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "public_users",
+  "info": {
+    "name": "public-user",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "show_phone": {
+      "type": "boolean"
+    },
+    "state": {
+      "type": "boolean",
+      "default": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "surname": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "id_private": {
+      "type": "biginteger",
+      "required": true
+    },
+    "publications": {
+      "collection": "publications",
+      "via": "public_user"
+    },
+    "profile": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "categories": {
+      "collection": "categories"
+    }
+  }
+}

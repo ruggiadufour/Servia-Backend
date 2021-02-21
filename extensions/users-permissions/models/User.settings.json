@@ -54,40 +54,16 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "nombre": {
-      "type": "string",
-      "unique": false,
-      "required": false
-    },
-    "apellido": {
-      "type": "string"
-    },
-    "ubicacion": {
-      "type": "string"
-    },
-    "telefono": {
-      "type": "string"
-    },
-    "url_imagen": {
-      "type": "string"
-    },
-    "permiso": {
-      "type": "integer"
-    },
-    "estado": {
-      "type": "boolean"
-    },
     "dni": {
       "type": "string"
     },
-    "fecha_creacion": {
-      "type": "date"
+    "type": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     },
-    "mostrar_telefono": {
-      "type": "boolean"
-    },
-    "descripcion": {
-      "type": "text"
+    "public_user": {
+      "model": "public-user"
     }
   }
 }

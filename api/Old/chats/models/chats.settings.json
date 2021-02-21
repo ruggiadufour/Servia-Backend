@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Chats",
+  "info": {
+    "name": "Chats",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "noleido_emisor": {
+      "type": "integer"
+    },
+    "noleido_receptor": {
+      "type": "integer"
+    },
+    "emisor": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "receptor": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "request": {
+      "model": "request"
+    },
+    "messages": {
+      "collection": "messages",
+      "via": "chats"
+    },
+    "categories": {
+      "model": "categories"
+    },
+    "petition": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
