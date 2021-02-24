@@ -1,26 +1,26 @@
-'use strict';
-const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
+"use strict";
+const { sanitizeEntity } = require("strapi-utils");
 
 module.exports = {
-    async filter(ctx) { 
-        let filters = ctx.request.body;
+  async filter(ctx) {
+    let filters = ctx.request.body;
 
-        let query = {}
-        
-        if(filters.services && filters.services.length!==0){
-            let services_id = filters.services.map(service => service.id)
-            query["service"] = services_id
-        }else{
-            query["categories"] = filters.category_id
-        }
+    let query = {published_at_null: false};
 
-        if(filters.typePublication) query["type"] = filters.typePublication;
+    if (filters.category_id) {
+      query["category"] = filters.category_id;
+      query["type"] = filters.type;
+    }
 
-        if(filters.word && filters.word!==""){
-            //To see how to have a smart search by name
-        }
+    if (filters.id) {
+      query["id"] = filters.id;
+    }
 
-        let res = await strapi.query('publications').find(query);
-        return sanitizeEntity(res, { model: strapi.models.publications });
-    },
+    if (filters.word && filters.word !== "") {
+      //To see how to have a smart search by name
+    }
+
+    let res = await strapi.query("publications").find(query)
+    return sanitizeEntity(res, { model: strapi.models.publications });
+  },
 };

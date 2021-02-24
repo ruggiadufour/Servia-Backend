@@ -1,9 +1,5 @@
 {
-	"latest": "3.5.0",
-<<<<<<< HEAD
-	"lastUpdateCheck": 1613948260497
-=======
-	"lastUpdateCheck": 1613915383188,
-	"lastNotification": 1613777430031
->>>>>>> master
+	"latest": "3.5.1",
+	"lastUpdateCheck": 1614124593547,
+	"lastNotification": 1613952462556
 }

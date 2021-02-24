@@ -23,10 +23,6 @@
       ],
       "plugin": "upload",
       "required": true
-    },
-    "services": {
-      "collection": "services",
-      "via": "category"
     }
   }
 }

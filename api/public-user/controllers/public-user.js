@@ -5,7 +5,7 @@ module.exports = {
     async filter(ctx) { 
         let filters = ctx.request.body;
 
-        let query = {}
+        let query = {published_at_null: false}
         
         if(filters.category_id)
         query["categories"] = filters.category_id

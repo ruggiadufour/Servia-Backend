@@ -50,10 +50,7 @@
       "via": "publications",
       "model": "public-user"
     },
-    "service": {
-      "model": "services"
-    },
-    "categories": {
+    "category": {
       "model": "categories"
     }
   }

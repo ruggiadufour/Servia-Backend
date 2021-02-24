@@ -39,10 +39,6 @@
       "type": "biginteger",
       "required": true
     },
-    "publications": {
-      "collection": "publications",
-      "via": "public_user"
-    },
     "profile": {
       "model": "file",
       "via": "related",
@@ -54,6 +50,15 @@
     },
     "categories": {
       "collection": "categories"
+    },
+    "publications": {
+      "collection": "publications",
+      "via": "public_user"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }
