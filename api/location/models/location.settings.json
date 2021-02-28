@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "name": "location"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "province": {
+      "type": "string",
+      "default": "Chaco"
+    },
+    "city": {
+      "type": "string",
+      "default": "PRESIDENCIA ROQUE SAENZ PENA"
+    },
+    "public_users": {
+      "via": "location",
+      "collection": "public-user"
+    }
+  }
+}

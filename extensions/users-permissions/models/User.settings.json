@@ -59,11 +59,15 @@
     },
     "type": {
       "type": "integer",
-      "required": true,
+      "required": false,
       "default": 0
     },
     "public_user": {
       "model": "public-user"
+    },
+    "waiting_verification": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

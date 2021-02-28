@@ -32,18 +32,17 @@
     "description": {
       "type": "string"
     },
-    "location": {
-      "type": "string"
-    },
     "id_private": {
       "type": "biginteger",
-      "required": true
+      "required": false
     },
     "profile": {
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images"
+        "images",
+        "videos",
+        "files"
       ],
       "plugin": "upload",
       "required": false
@@ -59,6 +58,24 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "country": {
+      "type": "string",
+      "default": "Argentina"
+    },
+    "province": {
+      "type": "string",
+      "default": "Chaco"
+    },
+    "city": {
+      "type": "string"
+    },
+    "location": {
+      "model": "location",
+      "via": "public_users"
     }
   }
 }

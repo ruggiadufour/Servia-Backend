@@ -1,13 +1,41 @@
-'use strict';
+"use strict";
+module.exports = () => {
+  // let io = require("socket.io")(strapi.server, {
+  //   cors: {
+  //     origin: "http://localhost:3000",
+  //     methods: ["GET", "POST"],
+  //     allowedHeaders: ["my-custom-header"],
+  //     credentials: true,
+  //   },
+  // });
 
-/**
- * An asynchronous bootstrap function that runs before
- * your application gets started.
- *
- * This gives you an opportunity to set up your data model,
- * run jobs, or perform some special logic.
- *
- * See more details here: https://strapi.io/documentation/v3.x/concepts/configurations.html#bootstrap
- */
+  // io.on("connection", function (socket) {
+  //   //console.log("user connected");
 
-module.exports = () => {};
+  //   require("./socket_connection")(socket)
+  // });
+
+  
+};
+
+//   module.exports = async () => {
+//     process.nextTick(() =>{
+//       var io = require('socket.io')(strapi.server);
+//       io.on('connection', async function(socket) {
+
+//         console.log(`a user connected`)
+//         // send message on user connection
+//         socket.emit('hello', JSON.stringify({connection: "succesfully"}))
+
+//         //JSON.stringify({message: await strapi.services.profile.update({"posted_by"})})
+
+//         // listen for user diconnect
+//         socket.on('disconnect', () =>{
+//           console.log('a user disconnected')
+//         })
+//       });
+
+//       strapi.io = io; // register socket io inside strapi main object to use it globally anywhere
+//     })
+
+//   };

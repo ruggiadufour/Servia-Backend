@@ -34,7 +34,7 @@
     },
     {
       "method": "POST",
-      "path": "/publications",
+      "path": "/create-publication",
       "handler": "publications.create",
       "config": {
         "policies": []
