@@ -194,11 +194,13 @@ module.exports = {
       if (!settings.email_confirmation) {
         params.confirmed = true;
       }
+      //Creating dni_images relation
+      const dni_images = await strapi.query("dni").create();
 
       //private user is created
       const user = await strapi
         .query("user", "users-permissions")
-        .create({ ...params, public_user: p_user.id });
+        .create({ ...params, public_user: p_user.id, dni_image: dni_images.id });
 
       const sanitizedUser = sanitizeEntity(user, {
         model: strapi.query("user", "users-permissions").model,
@@ -208,6 +210,9 @@ module.exports = {
       await strapi
         .query("public-user")
         .update({ id: p_user.id }, { id_private: sanitizedUser.id });
+      await strapi
+        .query("dni")
+        .update({ id: dni_images.id }, { id_private: sanitizedUser.id });
       //************************************************************************* */
 
       if (settings.email_confirmation) {

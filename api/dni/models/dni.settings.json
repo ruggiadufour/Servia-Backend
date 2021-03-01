@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dnis",
+  "info": {
+    "name": "dni",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "photos": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "id_private": {
+      "type": "biginteger"
+    }
+  }
+}

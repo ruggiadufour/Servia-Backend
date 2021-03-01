@@ -108,10 +108,16 @@ module.exports = {
 
     const { id } = ctx.params;
 
-    let private_user, public_user, files, location; 
+    let private_user, public_user, files, dni_files, location;
     if (ctx.is("multipart")) {
       let data = parseMultipartData(ctx).data;
-      files = parseMultipartData(ctx).files;
+      let Files = parseMultipartData(ctx).files;
+      if (Files.profile) {
+        files = Files;
+      }
+      if (Files.photos) {
+        dni_files = Files;
+      }
 
       private_user = data.private_usr;
       public_user = data.public_usr;
@@ -152,7 +158,6 @@ module.exports = {
       !password &&
       user.provider === "local"
     ) {
-      
       return ctx.badRequest("password.notNull");
     }
 
@@ -191,51 +196,69 @@ module.exports = {
       private_user.email = private_user.email.toLowerCase();
     }
 
-
     //************************************************************************* */
     //Modification
-    let id_location = null
-    if(location?.province && location?.city){
-      try{
+    let id_location = null;
+    if (location?.province && location?.city) {
+      try {
         let [loc_exists] = await strapi.query("location").find(location);
 
-        if(!loc_exists){
+        if (!loc_exists) {
           loc_exists = await strapi.query("location").create(location);
         }
-        id_location = loc_exists.id
-      }catch(error){
-        return error
-      }
-    }
-
-    let p_user;
-    if (Object.keys(files).length !== 0) {
-      try {
-        p_user = await strapi.services["public-user"].update({id_private:id}, {...public_user, location: id_location}, {
-          files,
-        });
+        id_location = loc_exists.id;
       } catch (error) {
         return error;
       }
-    } else {
-      p_user = await strapi.services["public-user"].update({id_private:id}, {...public_user, location: id_location});
     }
 
+    if (public_user) {
+      if (files) {
+        try {
+          await strapi.services["public-user"].update(
+            { id_private: id },
+            { ...public_user, location: id_location },
+            {
+              files,
+            }
+          );
+        } catch (error) {
+          return error;
+        }
+      } else {
+        await strapi.services["public-user"].update(
+          { id_private: id },
+          { ...public_user, location: id_location }
+        );
+      }
+    }
 
     if (_.has(private_user, "password") && password === user.password) {
       delete private_user.password;
     }
 
-    console.log(private_user)
+    ///Uploading dni_images
+    if (dni_files) {
+      try {
+        await strapi.services.dni.update(
+          { id_private: id },
+          {},
+          dni_files
+        );
+      } catch (error) {
+        return error;
+      }
+    }
+
     let data;
-    try{
+    try {
       data = await strapi.plugins["users-permissions"].services.user.edit(
         { id },
-        {...private_user}
+        { ...private_user }
       );
-    }catch(error){
-      console.log(error)
-      return error
+    } catch (error) {
+      console.log("error,",error);
+      return error;
     }
 
     ctx.send(sanitizeUser(data));

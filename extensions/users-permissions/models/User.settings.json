@@ -68,6 +68,9 @@
     "waiting_verification": {
       "type": "boolean",
       "default": false
+    },
+    "dni_image": {
+      "model": "dni"
     }
   }
 }

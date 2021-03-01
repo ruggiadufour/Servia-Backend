@@ -12,7 +12,8 @@
   },
   "attributes": {
     "show_phone": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "state": {
       "type": "boolean",
@@ -40,9 +41,7 @@
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "images",
-        "videos",
-        "files"
+        "images"
       ],
       "plugin": "upload",
       "required": false
@@ -57,25 +56,19 @@
     "verified": {
       "type": "boolean",
       "default": false,
-      "required": true
+      "required": false
     },
     "blocked": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "country": {
       "type": "string",
       "default": "Argentina"
     },
-    "province": {
-      "type": "string",
-      "default": "Chaco"
-    },
-    "city": {
-      "type": "string"
-    },
     "location": {
-      "model": "location",
-      "via": "public_users"
+      "via": "public_users",
+      "model": "location"
     }
   }
 }
