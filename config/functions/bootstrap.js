@@ -1,21 +1,28 @@
 "use strict";
 module.exports = () => {
-  // let io = require("socket.io")(strapi.server, {
-  //   cors: {
-  //     origin: "http://localhost:3000",
-  //     methods: ["GET", "POST"],
-  //     allowedHeaders: ["my-custom-header"],
-  //     credentials: true,
-  //   },
-  // });
+  let io = require("socket.io")(strapi.server, {
+    cors: {
+      origin: "http://localhost:3000",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["my-custom-header"],
+      credentials: true,
+    },
+  });
 
-  // io.on("connection", function (socket) {
-  //   //console.log("user connected");
+  let i = 0;
 
-  //   require("./socket_connection")(socket)
-  // });
+  io.on("connection", function (socket) {
+    console.log("user connected", i);
 
-  
+    console.log(io.engine.clientsCount)
+
+    require("./sockets/reports")(socket);
+
+    socket.on("disconnect", () => {
+      console.log("disc");
+      //socket.removeAllListeners();
+    });
+  });
 };
 
 //   module.exports = async () => {

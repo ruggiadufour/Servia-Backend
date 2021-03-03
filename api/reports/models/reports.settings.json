@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reports",
+  "info": {
+    "name": "reports",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "state": {
+      "default": 0,
+      "type": "integer"
+    },
+    "action": {
+      "type": "boolean",
+      "default": false
+    },
+    "publication": {
+      "model": "publications",
+      "via": "reports"
+    },
+    "public_user": {
+      "model": "public-user",
+      "via": "reports"
+    },
+    "motives": {
+      "collection": "motives"
+    }
+  }
+}

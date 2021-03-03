@@ -69,6 +69,10 @@
     "location": {
       "via": "public_users",
       "model": "location"
+    },
+    "reports": {
+      "via": "public_user",
+      "collection": "reports"
     }
   }
 }
