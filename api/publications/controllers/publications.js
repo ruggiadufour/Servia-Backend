@@ -55,6 +55,19 @@ module.exports = {
     const { id } = ctx.params;
     
     const [publication] = await strapi.services.publications.find({id: id});
+
+    //If the publication has an active report
+    const existsReport = await strapi.services.reports.findOne({
+      publication: publication.id,
+      state: [1,0]
+    });
+    if (existsReport) {
+      await strapi.services.reports.update(
+        { id: existsReport.id },
+        { state: -1 }
+      );
+    }
+    //////////////////////////
     
     let id_author = ctx.state.user.id;
     if(String(id_author)!==publication?.public_user.id_private){

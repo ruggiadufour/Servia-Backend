@@ -2,6 +2,14 @@
   "routes": [
     {
       "method": "GET",
+      "path": "/readall",
+      "handler": "notifications.read",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/notifications",
       "handler": "notifications.find",
       "config": {

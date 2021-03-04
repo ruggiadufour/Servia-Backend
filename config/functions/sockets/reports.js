@@ -56,6 +56,7 @@ module.exports = function (socket, currentConnections) {
         }
       } else {
         newState = 2;
+        await strapi.services.reports.update({ id }, { state: newState });
       }
 
       //If the report is rejected, then we don't send notifications

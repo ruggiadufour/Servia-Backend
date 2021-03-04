@@ -212,10 +212,12 @@ module.exports = {
       }
     }
 
+    //Update public-user data
+    let updated_public_user;
     if (public_user) {
       if (files) {
         try {
-          await strapi.services["public-user"].update(
+          updated_public_user = await strapi.services["public-user"].update(
             { id_private: id },
             { ...public_user, location: id_location },
             {
@@ -226,12 +228,25 @@ module.exports = {
           return error;
         }
       } else {
-        await strapi.services["public-user"].update(
+        updated_public_user = await strapi.services["public-user"].update(
           { id_private: id },
           { ...public_user, location: id_location }
         );
       }
     }
+
+    //If the user has a active report
+    const existsReport = await strapi.services.reports.findOne({
+      public_user: updated_public_user.id,
+      state: [1,0]
+    });
+    if (existsReport) {
+      await strapi.services.reports.update(
+        { id: existsReport.id },
+        { state: -1 }
+      );
+    }
+    //////////////////////////
 
     if (_.has(private_user, "password") && password === user.password) {
       delete private_user.password;
@@ -240,11 +255,7 @@ module.exports = {
     ///Uploading dni_images
     if (dni_files) {
       try {
-        await strapi.services.dni.update(
-          { id_private: id },
-          {},
-          dni_files
-        );
+        await strapi.services.dni.update({ id_private: id }, {}, dni_files);
       } catch (error) {
         return error;
       }
@@ -257,7 +268,7 @@ module.exports = {
         { ...private_user }
       );
     } catch (error) {
-      console.log("error,",error);
+      console.log("error,", error);
       return error;
     }
 
