@@ -9,19 +9,27 @@ module.exports = () => {
     },
   });
 
-  let i = 0;
-
+  var currentConnections = {};
   io.on("connection", function (socket) {
-    console.log("user connected", i);
+    console.log("user connected", io.engine.clientsCount);
 
-    console.log(io.engine.clientsCount)
+    socket.on("setUser", (data) => {
+      const parsed_data = JSON.parse(data);
 
-    require("./sockets/reports")(socket);
+      currentConnections[parsed_data.id] = { socket: socket };
+      currentConnections[parsed_data.id].data = parsed_data;
+    });
 
     socket.on("disconnect", () => {
-      console.log("disc");
-      //socket.removeAllListeners();
+      console.log("disconnected");
+      Object.keys(currentConnections).map((value) => {
+        if(currentConnections[value].socket===socket){
+          delete currentConnections[value];
+        }
+      });
     });
+
+    require("./sockets/reports")(socket, currentConnections);
   });
 };
 

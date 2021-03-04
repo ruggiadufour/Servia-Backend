@@ -5,7 +5,7 @@ module.exports = {
   async filter(ctx) {
     let filters = ctx.request.body;
 
-    let query = { published_at_null: false };
+    let query = { published_at_null: false, blocked:false, state: false };
 
     if (filters.province && filters.city) {
       query["location.province"] = filters.province;

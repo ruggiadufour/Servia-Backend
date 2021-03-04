@@ -71,6 +71,10 @@
     },
     "dni_image": {
       "model": "dni"
+    },
+    "notifications": {
+      "via": "receiver",
+      "collection": "notifications"
     }
   }
 }
