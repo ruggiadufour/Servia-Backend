@@ -30,9 +30,9 @@
       "type": "richtext"
     },
     "receiver": {
+      "via": "notifications",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "notifications"
+      "model": "user"
     }
   }
 }

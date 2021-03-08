@@ -2,48 +2,48 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/publications",
-      "handler": "publications.find",
+      "path": "/messages",
+      "handler": "message.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/publications/count",
-      "handler": "publications.count",
+      "path": "/messages/count",
+      "handler": "message.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/publications/:id",
-      "handler": "publications.findOne",
+      "path": "/messages/:id",
+      "handler": "message.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/create-publication",
-      "handler": "publications.create",
+      "path": "/messages",
+      "handler": "message.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/publications/:id",
-      "handler": "publications.update",
+      "path": "/messages/:id",
+      "handler": "message.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/publications/:id",
-      "handler": "publications.delete",
+      "path": "/messages/:id",
+      "handler": "message.delete",
       "config": {
         "policies": []
       }

@@ -73,8 +73,8 @@
       "model": "dni"
     },
     "notifications": {
-      "via": "receiver",
-      "collection": "notifications"
+      "collection": "notifications",
+      "via": "receiver"
     }
   }
 }

@@ -20,8 +20,8 @@
       "default": "PRESIDENCIA ROQUE SAENZ PENA"
     },
     "public_users": {
-      "collection": "public-user",
-      "via": "location"
+      "via": "location",
+      "collection": "public-user"
     }
   }
 }

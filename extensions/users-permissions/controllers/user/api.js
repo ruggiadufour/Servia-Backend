@@ -235,18 +235,20 @@ module.exports = {
       }
     }
 
-    //If the user has a active report
-    const existsReport = await strapi.services.reports.findOne({
-      public_user: updated_public_user.id,
-      state: [1,0]
-    });
-    if (existsReport) {
-      await strapi.services.reports.update(
-        { id: existsReport.id },
-        { state: -1 }
-      );
+    if (updated_public_user) {
+      //If the user has a active report
+      const existsReport = await strapi.services.reports.findOne({
+        public_user: updated_public_user.id,
+        state: [1, 0],
+      });
+      if (existsReport) {
+        await strapi.services.reports.update(
+          { id: existsReport.id },
+          { state: -1 }
+        );
+      }
+      //////////////////////////
     }
-    //////////////////////////
 
     if (_.has(private_user, "password") && password === user.password) {
       delete private_user.password;

@@ -27,8 +27,8 @@
       "via": "reports"
     },
     "public_user": {
-      "model": "public-user",
-      "via": "reports"
+      "via": "reports",
+      "model": "public-user"
     },
     "motives": {
       "collection": "motives"

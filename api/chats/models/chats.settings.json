@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chats",
+  "info": {
+    "name": "Chats",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "publication": {
+      "model": "publications"
+    },
+    "noread_sender": {
+      "type": "integer",
+      "default": 0
+    },
+    "noread_receiver": {
+      "default": 0,
+      "type": "integer"
+    },
+    "messages": {
+      "collection": "message",
+      "via": "chat"
+    },
+    "public_users": {
+      "collection": "public-user",
+      "via": "chats",
+      "dominant": true
+    },
+    "who_start_it": {
+      "type": "biginteger"
+    },
+    "type": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

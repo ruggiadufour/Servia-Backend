@@ -67,12 +67,16 @@
       "default": "Argentina"
     },
     "location": {
-      "via": "public_users",
-      "model": "location"
+      "model": "location",
+      "via": "public_users"
     },
     "reports": {
-      "via": "public_user",
-      "collection": "reports"
+      "collection": "reports",
+      "via": "public_user"
+    },
+    "chats": {
+      "via": "public_users",
+      "collection": "chats"
     }
   }
 }

@@ -30,27 +30,7 @@ module.exports = () => {
     });
 
     require("./sockets/reports")(socket, currentConnections);
+    require("./sockets/verift-id")(socket, currentConnections);
+    require("./sockets/contact")(socket, currentConnections);
   });
 };
-
-//   module.exports = async () => {
-//     process.nextTick(() =>{
-//       var io = require('socket.io')(strapi.server);
-//       io.on('connection', async function(socket) {
-
-//         console.log(`a user connected`)
-//         // send message on user connection
-//         socket.emit('hello', JSON.stringify({connection: "succesfully"}))
-
-//         //JSON.stringify({message: await strapi.services.profile.update({"posted_by"})})
-
-//         // listen for user diconnect
-//         socket.on('disconnect', () =>{
-//           console.log('a user disconnected')
-//         })
-//       });
-
-//       strapi.io = io; // register socket io inside strapi main object to use it globally anywhere
-//     })
-
-//   };
